@@ -25,6 +25,23 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
             }
+        },
+        {
+            "name": "WindowsDefault",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/bin/Hostx64/x64/cl.exe",
+                "CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/bin/Hostx64/x64/cl.exe"
+            }
+        },
+        {
+            "name": "WindowsDebug",
+            "inherits": "WindowsDefault"
+        },
+        {
+            "name": "WindowsRelease",
+            "inherits": "WindowsDefault"
         }
     ],
     "buildPresets": [
@@ -34,6 +51,14 @@
         },
         {
             "name": "Release",
+            "configurePreset": "Release"
+        },
+        {
+            "name": "WindowsDebug",
+            "configurePreset": "Debug"
+        },
+        {
+            "name": "WindowsRelease",
             "configurePreset": "Release"
         }
     ]
